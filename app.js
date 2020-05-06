@@ -9,20 +9,26 @@ const testMaterial = ['Arrogance is thinking that hard work can solve everything
 btn.addEventListener('click', beginTest);
 
 function beginTest() {
+    if(message.value !== "") {
+        message.value = "";
+    }
     let startTime = Date.now();
     document.body.removeChild(btn); //remove start button
-    doneBtn = document.createElement('button'); //create done button
+    let doneBtn = document.createElement('button'); //create done button
     doneBtn.innerHTML = 'Done';
     document.body.appendChild(doneBtn);
     const index = Math.floor(Math.random() * testMaterial.length);
     const phrase = testMaterial[index];
     div.innerHTML = phrase;
     doneBtn.addEventListener('click', function() {
-        displayResults(index, startTime);
+        displayResults(index, startTime, doneBtn);
     });
 }
 
-function displayResults(index, startTime) {
+function displayResults(index, startTime, doneBtn) {
+    document.body.removeChild(doneBtn);
+    document.body.appendChild(btn);
+    btn.innerHTML = 'Start';
     let endTime = Date.now();
     let minutes = (endTime - startTime) / 60000;
     let totalCharactersTyped = message.value.length; //number of characters typed including spaces
