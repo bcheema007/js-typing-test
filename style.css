@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap');
+
+body {
+    font-family: 'Dosis', sans-serif;
+}
+
+div {
+    font-size: 25px;
+    width: 500px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+textarea {
+    display: block;
+    margin: auto;
+}
+
+button {
+    display: block;
+    margin: auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: lightcoral;
+    color: white;
+}
+
+button:hover {
+    background-color: rgb(236, 58, 58);
+}
